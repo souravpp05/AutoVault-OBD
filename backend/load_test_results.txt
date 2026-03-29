@@ -1,0 +1,20 @@
+﻿
+ΓöüΓöüΓöüΓöüΓöüΓöü AutoVault LOAD TEST ΓöüΓöüΓöüΓöüΓöüΓöü
+
+Γû╢ Benchmarking: User Registration (50 total, 10 concurrent)
+  ≡ƒôè Success: 50 | Fail: 0
+  ΓÅ▒ Latency: Avg 31.4ms | Min 8ms | Max 103ms
+  ≡ƒÜÇ Throughput: 250.0 req/s
+
+Γû╢ Benchmarking: Marketplace Browsing (100 total, 20 concurrent)
+  ≡ƒôè Success: 100 | Fail: 0
+  ΓÅ▒ Latency: Avg 259.6ms | Min 40ms | Max 355ms
+  ≡ƒÜÇ Throughput: 69.1 req/s
+
+Γû╢ Benchmarking: OBD Telemetry Flood (500 total, 25 concurrent)
+  ≡ƒôè Success: 500 | Fail: 0
+  ΓÅ▒ Latency: Avg 22.8ms | Min 2ms | Max 73ms
+  ≡ƒÜÇ Throughput: 1068.4 req/s
+
+ΓöüΓöüΓöüΓöüΓöüΓöüΓöü LOAD TEST COMPLETE ΓöüΓöüΓöüΓöüΓöüΓöüΓöü
+

@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.development
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Gemini/Antigravity Artifacts
+.gemini/
+brain/
+artifacts/
+tmp/
+functional_tests.mjs
+load_test.mjs
+obd-bridge-v2.js
+obd-bridge.js
+integration_tests.mjs
+run_functional_tests.mjs
+final_test_out.txt
+test_results.txt
+load_test_results.csv
+testing_plan.md
+deployment_plan.md
+web_serial_hosting_tasks.md
+load_test_tasks.md
+load_test_walkthrough.md
+load_testing_plan.md
+task.md
+walkthrough.md
+hosting_readiness_plan.md
+performance_report.md
+inventory_report.md
+summary_report.md
+
+# Package managers
+package-lock.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

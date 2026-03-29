@@ -1,0 +1,53 @@
+﻿Γû╢ AutoVault End-to-End Integration Testing Suite
+  [32mΓ£ö 1. Database Connection & System Integration [90m(136.3725ms)[39m[39m
+  [32mΓ£ö 2. ELM327 Telemetry -> OBD Bridge -> Backend Integration [90m(14.5013ms)[39m[39m
+  [31mΓ£û 3. Warning Aggregation & Health Score Integration [90m(5.8139ms)[39m[39m
+  [31mΓ£û 4. Marketplace Public Dataset Integration [90m(58.8711ms)[39m[39m
+[31mΓ£û AutoVault End-to-End Integration Testing Suite [90m(218.7344ms)[39m[39m
+[34mΓä╣ tests 5[39m
+[34mΓä╣ suites 0[39m
+[34mΓä╣ pass 2[39m
+[34mΓä╣ fail 3[39m
+[34mΓä╣ cancelled 0[39m
+[34mΓä╣ skipped 0[39m
+[34mΓä╣ todo 0[39m
+[34mΓä╣ duration_ms 376.2582[39m
+
+[31mΓ£û failing tests:[39m
+
+test at integration_tests.mjs:54:13
+[31mΓ£û 3. Warning Aggregation & Health Score Integration [90m(5.8139ms)[39m[39m
+  AssertionError [ERR_ASSERTION]: Health Aggregation logic failed to reduce score on bad sensors
+      at TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/integration_tests.mjs:62:16)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/integration_tests.mjs:54:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at integration_tests.mjs:67:13
+[31mΓ£û 4. Marketplace Public Dataset Integration [90m(58.8711ms)[39m[39m
+  AssertionError [ERR_ASSERTION]: Marketplace caching failed to update
+  
+  'Good' !== 'Critical'
+  
+      at TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/integration_tests.mjs:77:20)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/integration_tests.mjs:67:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'Good',
+    expected: 'Critical',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

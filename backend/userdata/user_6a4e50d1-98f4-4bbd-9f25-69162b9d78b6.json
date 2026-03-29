@@ -1,0 +1,14 @@
+{
+  "vehicles": [
+    {
+      "id": "ed0c51f1-6d31-4b96-a3f6-05113a3eb86d",
+      "make": "toyota",
+      "model": "camry",
+      "plate": "KL07DE4137",
+      "year": "2015",
+      "fuelLogs": [],
+      "documents": [],
+      "alerts": []
+    }
+  ]
+}

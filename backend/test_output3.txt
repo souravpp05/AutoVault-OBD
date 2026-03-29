@@ -1,0 +1,36 @@
+﻿Γû╢ AutoVault Backend Unit Tests Suite
+  [31mΓ£û 1. API should return list of marketplace vehicles [90m(49.3326ms)[39m[39m
+  [32mΓ£ö 2. OBD Live Simulation Fallback Test [90m(0.3665ms)[39m[39m
+  [32mΓ£ö 3. OBD Bridge Odometer Persistence Logic Test [90m(0.3092ms)[39m[39m
+  [32mΓ£ö 4. OBD Health Scoring Math Test [90m(0.432ms)[39m[39m
+[31mΓ£û AutoVault Backend Unit Tests Suite [90m(53.6124ms)[39m[39m
+[34mΓä╣ tests 5[39m
+[34mΓä╣ suites 0[39m
+[34mΓä╣ pass 3[39m
+[34mΓä╣ fail 2[39m
+[34mΓä╣ cancelled 0[39m
+[34mΓä╣ skipped 0[39m
+[34mΓä╣ todo 0[39m
+[34mΓä╣ duration_ms 60.536[39m
+
+[31mΓ£û failing tests:[39m
+
+test at run_tests.mjs:10:13
+[31mΓ£û 1. API should return list of marketplace vehicles [90m(49.3326ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/run_tests.mjs:11:21)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/run_tests.mjs:10:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }

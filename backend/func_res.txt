@@ -1,0 +1,694 @@
+﻿[31mΓ£û 1. AUTH - Register: missing username returns 400 [90m(47.4261ms)[39m[39m
+[31mΓ£û 2. AUTH - Register: short password returns 400 [90m(6.4199ms)[39m[39m
+[31mΓ£û 3. AUTH - Register: missing email returns 400 [90m(2.5567ms)[39m[39m
+[31mΓ£û 4. AUTH - Register: valid user created successfully [90m(2.3015ms)[39m[39m
+[31mΓ£û 5. AUTH - Register: duplicate username returns 400 [90m(2.7746ms)[39m[39m
+[31mΓ£û 6. AUTH - Login: wrong password returns 401 [90m(3.8085ms)[39m[39m
+[31mΓ£û 7. AUTH - Login: unknown user returns 401 [90m(2.3801ms)[39m[39m
+[31mΓ£û 8. AUTH - Login: correct credentials return userId [90m(2.0973ms)[39m[39m
+[31mΓ£û 9. PROFILE - Get: unknown userId returns 404 [90m(2.1122ms)[39m[39m
+[31mΓ£û 10. PROFILE - Get: returns profile for valid userId [90m(2.8108ms)[39m[39m
+[31mΓ£û 11. PROFILE - Update: saves name/phone/address [90m(2.6625ms)[39m[39m
+[31mΓ£û 12. PROFILE - Get after update: returns updated values [90m(2.3468ms)[39m[39m
+[31mΓ£û 13. VEHICLE - Create: missing userId returns 400 [90m(2.4689ms)[39m[39m
+[31mΓ£û 14. VEHICLE - Create: valid payload creates vehicle and returns id [90m(3.256ms)[39m[39m
+[31mΓ£û 15. VEHICLE - List: returns array for valid userId [90m(2.3916ms)[39m[39m
+[31mΓ£û 16. VEHICLE - List: returns empty array when no userId sent [90m(2.583ms)[39m[39m
+[31mΓ£û 17. VEHICLE - Update: changes make/model in DB [90m(2.3906ms)[39m[39m
+[31mΓ£û 18. VEHICLE - Update: wrong userId returns 404 [90m(2.2883ms)[39m[39m
+[31mΓ£û 19. MARKETPLACE - Returns array (may be empty) [90m(2.1416ms)[39m[39m
+[31mΓ£û 20. MARKETPLACE - Vehicle listed for rent appears in marketplace [90m(2.1071ms)[39m[39m
+[31mΓ£û 21. FUEL LOG - Add entry: valid payload returns success [90m(2.9229ms)[39m[39m
+[31mΓ£û 22. FUEL LOG - Get logs: returns array with the entry [90m(1.8311ms)[39m[39m
+[31mΓ£û 23. FUEL LOG - Mileage calculation: km/L is accurately derived [90m(1.8017ms)[39m[39m
+[31mΓ£û 24. OBD - POST /live: bad vehicleId returns 404 [90m(1.5685ms)[39m[39m
+[31mΓ£û 25. OBD - POST /live: valid payload stores data successfully [90m(1.8915ms)[39m[39m
+[31mΓ£û 26. OBD - GET /:vehicleId: returns connected=true with valid sensor data [90m(2.4731ms)[39m[39m
+[31mΓ£û 27. OBD - Health score: normal sensors yield score >= 80 (Good) [90m(2.59ms)[39m[39m
+[31mΓ£û 28. OBD - Health score: avg mileage is a realistic positive value [90m(1.9809ms)[39m[39m
+[31mΓ£û 29. OBD - Odometer: persisted correctly after baseOdometer + tripDelta [90m(1.9851ms)[39m[39m
+[31mΓ£û 30. OBD - Get health from /vehicles/:id/health returns obdHealth object [90m(3.2838ms)[39m[39m
+[31mΓ£û 31. SERVICE RESET - service: updates nextServiceKm in DB [90m(1.7057ms)[39m[39m
+[31mΓ£û 32. SERVICE RESET - oil: updates nextOilChangeKm in DB [90m(1.6207ms)[39m[39m
+[31mΓ£û 33. FORGOT PASSWORD - unknown username returns 404 [90m(1.3004ms)[39m[39m
+[31mΓ£û 34. FORGOT PASSWORD - valid username returns maskedEmail [90m(2.1287ms)[39m[39m
+[31mΓ£û 35. VEHICLE - Delete: removes vehicle from DB [90m(2.2379ms)[39m[39m
+[31mΓ£û 36. VEHICLE - List after delete: vehicle no longer appears [90m(1.3798ms)[39m[39m
+[34mΓä╣ tests 36[39m
+[34mΓä╣ suites 0[39m
+[34mΓä╣ pass 0[39m
+[34mΓä╣ fail 36[39m
+[34mΓä╣ cancelled 0[39m
+[34mΓä╣ skipped 0[39m
+[34mΓä╣ todo 0[39m
+[34mΓä╣ duration_ms 252.0455[39m
+
+[31mΓ£û failing tests:[39m
+
+test at functional_tests.mjs:31:1
+[31mΓ£û 1. AUTH - Register: missing username returns 400 [90m(47.4261ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:32:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:36:1
+[31mΓ£û 2. AUTH - Register: short password returns 400 [90m(6.4199ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:37:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:41:1
+[31mΓ£û 3. AUTH - Register: missing email returns 400 [90m(2.5567ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:42:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:46:1
+[31mΓ£û 4. AUTH - Register: valid user created successfully [90m(2.3015ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:47:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:55:1
+[31mΓ£û 5. AUTH - Register: duplicate username returns 400 [90m(2.7746ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:56:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:63:1
+[31mΓ£û 6. AUTH - Login: wrong password returns 401 [90m(3.8085ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:64:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:68:1
+[31mΓ£û 7. AUTH - Login: unknown user returns 401 [90m(2.3801ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:69:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:73:1
+[31mΓ£û 8. AUTH - Login: correct credentials return userId [90m(2.0973ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:74:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:84:1
+[31mΓ£û 9. PROFILE - Get: unknown userId returns 404 [90m(2.1122ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:85:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:89:1
+[31mΓ£û 10. PROFILE - Get: returns profile for valid userId [90m(2.8108ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:90:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:96:1
+[31mΓ£û 11. PROFILE - Update: saves name/phone/address [90m(2.6625ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:97:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:103:1
+[31mΓ£û 12. PROFILE - Get after update: returns updated values [90m(2.3468ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:104:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:113:1
+[31mΓ£û 13. VEHICLE - Create: missing userId returns 400 [90m(2.4689ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:114:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:118:1
+[31mΓ£û 14. VEHICLE - Create: valid payload creates vehicle and returns id [90m(3.256ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:119:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:126:1
+[31mΓ£û 15. VEHICLE - List: returns array for valid userId [90m(2.3916ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:127:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:134:1
+[31mΓ£û 16. VEHICLE - List: returns empty array when no userId sent [90m(2.583ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:135:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:140:1
+[31mΓ£û 17. VEHICLE - Update: changes make/model in DB [90m(2.3906ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:141:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:147:1
+[31mΓ£û 18. VEHICLE - Update: wrong userId returns 404 [90m(2.2883ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:148:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:155:1
+[31mΓ£û 19. MARKETPLACE - Returns array (may be empty) [90m(2.1416ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:156:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:162:1
+[31mΓ£û 20. MARKETPLACE - Vehicle listed for rent appears in marketplace [90m(2.1071ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:164:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:175:1
+[31mΓ£û 21. FUEL LOG - Add entry: valid payload returns success [90m(2.9229ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:177:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:190:1
+[31mΓ£û 22. FUEL LOG - Get logs: returns array with the entry [90m(1.8311ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:191:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:199:1
+[31mΓ£û 23. FUEL LOG - Mileage calculation: km/L is accurately derived [90m(1.8017ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:200:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:212:1
+[31mΓ£û 24. OBD - POST /live: bad vehicleId returns 404 [90m(1.5685ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:213:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:219:1
+[31mΓ£û 25. OBD - POST /live: valid payload stores data successfully [90m(1.8915ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:220:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:235:1
+[31mΓ£û 26. OBD - GET /:vehicleId: returns connected=true with valid sensor data [90m(2.4731ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:236:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:244:1
+[31mΓ£û 27. OBD - Health score: normal sensors yield score >= 80 (Good) [90m(2.59ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:245:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:251:1
+[31mΓ£û 28. OBD - Health score: avg mileage is a realistic positive value [90m(1.9809ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:252:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:258:1
+[31mΓ£û 29. OBD - Odometer: persisted correctly after baseOdometer + tripDelta [90m(1.9851ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:259:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:265:1
+[31mΓ£û 30. OBD - Get health from /vehicles/:id/health returns obdHealth object [90m(3.2838ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:266:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:276:1
+[31mΓ£û 31. SERVICE RESET - service: updates nextServiceKm in DB [90m(1.7057ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:277:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:284:1
+[31mΓ£û 32. SERVICE RESET - oil: updates nextOilChangeKm in DB [90m(1.6207ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:285:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:294:1
+[31mΓ£û 33. FORGOT PASSWORD - unknown username returns 404 [90m(1.3004ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:295:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:299:1
+[31mΓ£û 34. FORGOT PASSWORD - valid username returns maskedEmail [90m(2.1287ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:300:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:312:1
+[31mΓ£û 35. VEHICLE - Delete: removes vehicle from DB [90m(2.2379ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:313:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }
+
+test at functional_tests.mjs:319:1
+[31mΓ£û 36. VEHICLE - List after delete: vehicle no longer appears [90m(1.3798ms)[39m[39m
+  TypeError: fetch failed
+      at node:internal/deps/undici/undici:16416:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/functional_tests.mjs:320:15)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    [cause]: Error: connect ECONNREFUSED 127.0.0.1:3001
+        at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1637:16) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  }

@@ -1,0 +1,26 @@
+﻿Γû╢ AutoVault Backend Unit Tests Suite
+  [32mΓ£ö 1. API should return list of marketplace vehicles [90m(130.2354ms)[39m[39m
+  [32mΓ£ö 2. OBD Live Simulation Fallback Test [90m(41.0914ms)[39m[39m
+  [31mΓ£û 3. OBD Bridge Odometer Persistence Logic Test [90m(21.6081ms)[39m[39m
+  [32mΓ£ö 4. OBD Health Scoring Math Test [90m(8.4386ms)[39m[39m
+[31mΓ£û AutoVault Backend Unit Tests Suite [90m(204.2319ms)[39m[39m
+[34mΓä╣ tests 5[39m
+[34mΓä╣ suites 0[39m
+[34mΓä╣ pass 3[39m
+[34mΓä╣ fail 2[39m
+[34mΓä╣ cancelled 0[39m
+[34mΓä╣ skipped 0[39m
+[34mΓä╣ todo 0[39m
+[34mΓä╣ duration_ms 210.8173[39m
+
+[31mΓ£û failing tests:[39m
+
+test at run_tests.mjs:47:13
+[31mΓ£û 3. OBD Bridge Odometer Persistence Logic Test [90m(21.6081ms)[39m[39m
+  TypeError: Cannot read properties of undefined (reading 'odometer')
+      at TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/run_tests.mjs:73:34)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async TestContext.<anonymous> (file:///C:/Users/SOURAV/Hackathon/backend/run_tests.mjs:47:5)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)

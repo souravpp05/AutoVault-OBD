@@ -1,0 +1,123 @@
+﻿
+[34mΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü[0m
+[34m  AutoVault  ΓÇö  Full Functional Test Suite  (36 tests)[0m
+[34mΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü[0m
+
+[33mΓû╢ Starting test server on port 3099ΓÇª[0m
+  [90m[srv] Γ£à Connected to MongoDB: mongodb://localhost:27017/fueltrack[0m
+  [90m[srv] ≡ƒÜÇ Backend running at http://localhost:3099[0m
+  [90m[srv] ≡ƒôª Using MongoDB database[0m
+[32mΓ£ö Server ready.[0m
+
+[33mΓöîΓöÇ AUTH ΓÇö Register[0m
+  [32mΓ£ö[0m 1.  Register: missing username ΓåÆ 400
+  [32mΓ£ö[0m 2.  Register: password too short ΓåÆ 400
+  [32mΓ£ö[0m 3.  Register: missing email ΓåÆ 400
+  [90m[srv] Γ£à New user registered: ft_1774777412230 (c3a64b2f-fb25-40ae-8a3b-7b7c9a079b1c)[0m
+  [32mΓ£ö[0m 4.  Register: valid payload ΓåÆ 200 + userId returned
+  [32mΓ£ö[0m 5.  Register: duplicate username ΓåÆ 400
+
+[33mΓöîΓöÇ AUTH ΓÇö Login[0m
+  [32mΓ£ö[0m 6.  Login: wrong password ΓåÆ 401
+  [32mΓ£ö[0m 7.  Login: unknown user ΓåÆ 401
+  [90m[srv] Γ£à User logged in: ft_1774777412230 (c3a64b2f-fb25-40ae-8a3b-7b7c9a079b1c)[0m
+  [32mΓ£ö[0m 8.  Login: correct credentials ΓåÆ 200 + correct userId
+
+[33mΓöîΓöÇ USER PROFILE[0m
+  [32mΓ£ö[0m 9.  Profile GET: unknown userId ΓåÆ 404
+  [32mΓ£ö[0m 10. Profile GET: valid userId ΓåÆ 200 with name field
+  [32mΓ£ö[0m 11. Profile PUT: saves name / phone / address
+  [32mΓ£ö[0m 12. Profile GET after update: returns updated values
+
+[33mΓöîΓöÇ VEHICLES ΓÇö CRUD[0m
+  [32mΓ£ö[0m 13. Vehicle CREATE: missing userId ΓåÆ 400
+  [32mΓ£ö[0m 14. Vehicle CREATE: valid payload ΓåÆ 200 + vehicleId
+  [32mΓ£ö[0m 15. Vehicle LIST: valid userId ΓåÆ array containing created vehicle
+  [32mΓ£ö[0m 16. Vehicle LIST: no userId ΓåÆ empty array
+  [32mΓ£ö[0m 17. Vehicle UPDATE: valid userId ΓåÆ make/model changed
+  [32mΓ£ö[0m 18. Vehicle UPDATE: wrong userId ΓåÆ 404
+
+[33mΓöîΓöÇ MARKETPLACE[0m
+  [32mΓ£ö[0m 19. Marketplace: GET returns array
+  [32mΓ£ö[0m 20. Marketplace: vehicle listed for rent appears with ownerInfo
+
+[33mΓöîΓöÇ FUEL LOGS[0m
+  [31mΓ£û[0m 21. Fuel LOG add: valid entry ΓåÆ success
+    [90mΓåÆ Expected 200, got 404[0m
+  [31mΓ£û[0m 22. Fuel LOG get: returns array with the entry
+    [90mΓåÆ Unexpected token '<', "<!DOCTYPE "... is not valid JSON[0m
+  [31mΓ£û[0m 23. Fuel mileage: 400 km / 30 L = realistic km/L (10ΓÇô20)
+    [90mΓåÆ Unexpected token '<', "<!DOCTYPE "... is not valid JSON[0m
+
+[33mΓöîΓöÇ OBD ΓÇö Live Push[0m
+  [32mΓ£ö[0m 24. OBD POST /live: unknown vehicleId ΓåÆ 404
+  [32mΓ£ö[0m 25. OBD POST /live: valid payload ΓåÆ 200 success
+
+[33mΓöîΓöÇ OBD ΓÇö Health & Telemetry[0m
+  [31mΓ£û[0m 26. OBD GET: connected=true, health object present
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 27. OBD health score: normal sensors yield score ΓëÑ 70
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 28. OBD avgMileage: realistic value in 1ΓÇô50 km/L
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 29. OBD odometer: ΓëÑ seeded baseOdometer (15000)
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 30. /vehicles/:id/health: batteryVoltage & odometer persisted
+    [90mΓåÆ fetch failed[0m
+
+[33mΓöîΓöÇ SERVICE RESET[0m
+  [31mΓ£û[0m 31. Service reset (service): nextServiceKm updated, status=OK
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 32. Service reset (oil): oilChangeStatus=OK
+    [90mΓåÆ fetch failed[0m
+
+[33mΓöîΓöÇ PASSWORD RESET[0m
+  [31mΓ£û[0m 33. Forgot PW OTP: unknown username ΓåÆ 404
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 34. Forgot PW OTP: valid username ΓåÆ 200 + maskedEmail
+    [90mΓåÆ fetch failed[0m
+
+[33mΓöîΓöÇ CLEANUP[0m
+  [31mΓ£û[0m 35. Vehicle DELETE: removes vehicle from DB
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 36. Vehicle LIST after delete: vehicle gone
+    [90mΓåÆ fetch failed[0m
+
+[34mΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü[0m
+[34m  RESULTS[0m
+[34mΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü[0m
+
+  [32mPASS[0m  22 / 36
+  [31mFAIL[0m  14 / 36
+
+  [31mΓ£û[0m 21. Fuel LOG add: valid entry ΓåÆ success
+    [90mΓåÆ Expected 200, got 404[0m
+  [31mΓ£û[0m 22. Fuel LOG get: returns array with the entry
+    [90mΓåÆ Unexpected token '<', "<!DOCTYPE "... is not valid JSON[0m
+  [31mΓ£û[0m 23. Fuel mileage: 400 km / 30 L = realistic km/L (10ΓÇô20)
+    [90mΓåÆ Unexpected token '<', "<!DOCTYPE "... is not valid JSON[0m
+  [31mΓ£û[0m 26. OBD GET: connected=true, health object present
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 27. OBD health score: normal sensors yield score ΓëÑ 70
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 28. OBD avgMileage: realistic value in 1ΓÇô50 km/L
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 29. OBD odometer: ΓëÑ seeded baseOdometer (15000)
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 30. /vehicles/:id/health: batteryVoltage & odometer persisted
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 31. Service reset (service): nextServiceKm updated, status=OK
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 32. Service reset (oil): oilChangeStatus=OK
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 33. Forgot PW OTP: unknown username ΓåÆ 404
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 34. Forgot PW OTP: valid username ΓåÆ 200 + maskedEmail
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 35. Vehicle DELETE: removes vehicle from DB
+    [90mΓåÆ fetch failed[0m
+  [31mΓ£û[0m 36. Vehicle LIST after delete: vehicle gone
+    [90mΓåÆ fetch failed[0m
+
+[34mΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü[0m
+

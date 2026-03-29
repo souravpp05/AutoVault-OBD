@@ -1,0 +1,14 @@
+{
+  "vehicles": [
+    {
+      "id": "9bf51d61-b818-4245-817e-514bba4227c4",
+      "make": "gh",
+      "model": "yy",
+      "plate": "YD67",
+      "year": "2007",
+      "fuelLogs": [],
+      "documents": [],
+      "alerts": []
+    }
+  ]
+}
