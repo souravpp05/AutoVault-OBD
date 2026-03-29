@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { API_URL as BASE_URL } from '../config'
 
-const API_URL = 'http://localhost:3001/api'
+const API_URL = `${BASE_URL}/api`
 
 export default function ForgotPassword() {
     const [username, setUsername] = useState('')

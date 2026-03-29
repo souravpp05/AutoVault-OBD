@@ -130,7 +130,7 @@ export default function Marketplace() {
   const [locationSearch, setLocationSearch] = useState('')
 
   useEffect(() => {
-    fetch('http://localhost:3001/api/marketplace/vehicles')
+    fetch(`${API_URL}/api/marketplace/vehicles`)
       .then(res => res.json())
       .then(data => {
         setVehicles(data)

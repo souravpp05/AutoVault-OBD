@@ -8,6 +8,8 @@
  * - RPM, Coolant Temp, Boost Pressure, Throttle Position, Fuel Pressure, Mileage
  */
 
+import API_URL from '../config'
+
 // ELM327 BLE Service/Characteristic UUIDs (common for most BLE ELM327 adapters)
 const ELM327_SERVICE_UUID = '0000fff0-0000-1000-8000-00805f9b34fb'
 const ELM327_NOTIFY_UUID = '0000fff1-0000-1000-8000-00805f9b34fb'
@@ -173,7 +175,7 @@ class ObdBluetoothService {
     // SERIAL CONNECTION (Web Serial API)
     // =============================================
 
-    async connectSerial(vehicleId, serverUrl = 'http://localhost:3001', userId = '') {
+    async connectSerial(vehicleId, serverUrl = API_URL, userId = '') {
         if (!ObdBluetoothService.isWebSerialAvailable()) {
             throw new Error('Web Serial not available. Use Chrome/Edge/Opera.')
         }
@@ -447,7 +449,7 @@ class ObdBluetoothService {
     // BRIDGE MODE (Classic Bluetooth via server)
     // =============================================
 
-    async connectBridge(vehicleId, serverUrl = 'http://localhost:3001', userId = '') {
+    async connectBridge(vehicleId, serverUrl = API_URL, userId = '') {
         this.mode = 'bridge'
         this.connected = true
         this._notifyListeners({ type: 'connected', mode: 'bridge' })
